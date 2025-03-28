@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import CreditCard from "./credit-card";
-import { InfoIcon } from "lucide-react";
+import { CirclePlusIcon } from "lucide-react";
 
 type FormState = {
   cardNumber: string;
@@ -199,7 +199,7 @@ export default function PaymentForm() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-      <div className="md:col-span-5 flex justify-center md:justify-end">
+      <div className="md:col-span-6 flex justify-center">
         <CreditCard
           cardNumber={formState.cardNumber}
           expiryDate={formState.expiryDate}
@@ -208,10 +208,10 @@ export default function PaymentForm() {
         />
       </div>
 
-      <div className="md:col-span-7">
+      <div className="md:col-span-6">
         <div className="space-y-8">
           <div>
-            <h1 className="text-3xl font-light text-white mb-6">Payment Information</h1>
+            <h1 className="text-3xl font-semibold text-white mb-6">Payment Information</h1>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -289,10 +289,10 @@ export default function PaymentForm() {
               </div>
             </div>
 
-            <div className="pt-4">
+            <div className="pt-4 justify-center flex">
               <Button
                 type="submit"
-                className="w-auto px-8 py-3 h-12 rounded-full bg-[#111111] hover:bg-[#222222] text-white"
+                className="w-auto px-8 py-3 h-12 rounded-full bg-[#111111] hover:bg-[#222222] text-white ring-offset-background"
                 disabled={!isFormValid()}
               >
                 Continue
@@ -306,7 +306,7 @@ export default function PaymentForm() {
               className="w-full flex items-center justify-between py-3 text-sm text-white/80 border-b border-[#333333]"
             >
               <span>Why do you need my card?</span>
-              <InfoIcon size={18} className="text-white/60" />
+              <CirclePlusIcon size={18} className="text-white/60" />
             </button>
 
             {expandedSection === "why" && (
@@ -321,7 +321,7 @@ export default function PaymentForm() {
               className="w-full flex items-center justify-between py-3 text-sm text-white/80 border-b border-[#333333]"
             >
               <span>How might you use my card in the future?</span>
-              <InfoIcon size={18} className="text-white/60" />
+              <CirclePlusIcon size={18} className="text-white/60" />
             </button>
 
             {expandedSection === "future" && (
@@ -337,12 +337,12 @@ export default function PaymentForm() {
 
       <div className="md:col-span-12 mt-8">
         <div className="w-full h-[2px] bg-[#222222] relative">
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#444444]"></div>
+          <div className="absolute left-10 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#444444]"></div>
           <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#4169E1]"></div>
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#444444]"></div>
+          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#444444]"></div>
         </div>
         <div className="flex justify-between text-xs text-white/60 mt-2">
-          <span>Appointment</span>
+          <span className="ml-4">Appointment</span>
           <span>Payment</span>
           <span className="invisible">Confirmation</span>
         </div>

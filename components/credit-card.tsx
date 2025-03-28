@@ -66,6 +66,7 @@ export default function CreditCard({ cardNumber, expiryDate, cvv, isFlipped }: C
         style={{
           transformStyle: "preserve-3d",
           transition: "transform 0.6s",
+          
         }}
       >
         {/* Front of card */}
@@ -74,30 +75,37 @@ export default function CreditCard({ cardNumber, expiryDate, cvv, isFlipped }: C
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(0deg)",
+            background: "linear-gradient(300deg, #a78bfa, #fbcfe8, #fde68a)",
           }}
         >
-          <div className="flex justify-between items-start">
-            <div className="text-white font-light text-sm">5,756</div>
+          <div>
+            <div className="text-white font-light text-sm">Balance</div>
+            <div className="text-white font-semibold text-lg">$5,756</div>
           </div>
 
           <div className="space-y-4">
+            <div className="flex justify-between items-start  items-center">
             <div className="font-mono text-base tracking-wider">
               {formatCardNumberDisplay(cardNumber || "•••• •••• •••• ••••")}
             </div>
+            <div className="w-12">
+                <img src="/sim.svg?height=30&width=40" alt="Visa" className="w-full" />
+              </div>
+              </div>
 
             <div className="flex justify-between items-end">
               <div className="text-[10px] opacity-80">
-                <p>CARD HOLDER</p>
-                <p className="text-xs">John Doe</p>
+                <p className="[text-shadow:_0_2px_4px_rgb(99_102_241_/_0.8)]">CARD HOLDER</p>
+                <p className="text-xs ">John Doe</p>
               </div>
 
               <div className="text-[10px] opacity-80">
-                <p>EXPIRES</p>
+                <p className="[text-shadow:_0_2px_4px_rgb(99_102_241_/_0.8)]">EXPIRES</p>
                 <p className="text-xs">{expiryDate || "MM/YYYY"}</p>
               </div>
 
               <div className="w-12">
-                <img src="/placeholder.svg?height=30&width=48" alt="Visa" className="w-full" />
+              <img src="/visa.svg?height=30&width=40" alt="Visa" className="w-full" />
               </div>
             </div>
           </div>
@@ -109,6 +117,7 @@ export default function CreditCard({ cardNumber, expiryDate, cvv, isFlipped }: C
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
+            background: "linear-gradient(300deg, #a78bfa, #fbcfe8, #fde68a)",
           }}
         >
           <div className="w-full h-12 bg-black/80 mt-6"></div>
@@ -125,9 +134,9 @@ export default function CreditCard({ cardNumber, expiryDate, cvv, isFlipped }: C
           </div>
         </div>
       </div>
-      <p className="text-xl font-light text-white/80 mb-8">
+      <p className="text-xl font-semibold text-white/80 mt-8 mb-8">
               To confirm your appointment please provide some additional information
-            </p>
+      </p>
     </div>
   )
 }
