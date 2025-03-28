@@ -57,10 +57,10 @@ export default function CreditCard({ cardNumber, expiryDate, cvv, isFlipped }: C
   }
 
   return (
-    <div className="perspective-1000 w-full max-w-[330px] h-[210px] relative">
+    <div className="perspective-1000 w-full max-w-[330px] relative">
       <div
         className={cn(
-          "w-full h-full transition-all duration-300 transform-style-preserve-3d relative",
+          "w-full h-full transition-all duration-300 transform-style-preserve-3d relative  max-w-[300px] h-[210px]",
           showBack ? "rotate-y-180" : "rotate-y-0",
         )}
         style={{
