@@ -112,6 +112,7 @@ export default function CreditCard({ cardNumber, expiryDate, cvv, isFlipped }: C
         </div>
 
         {/* Back of card */}
+        
         <div
           className="absolute w-full h-full rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 text-white shadow-xl flex flex-col justify-between"
           style={{
